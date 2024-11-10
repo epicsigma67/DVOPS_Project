@@ -1,20 +1,20 @@
 [
   {
     "id": "1",
-    "name": "Samsung TV",
+    "name": "TV",
     "price": 500,
-    "description": "50-inch 4K UHD Smart TV"
+    "description": "Smart TV"
   },
   {
     "id": "2",
-    "name": "iPhone 15",
-    "price": 1200,
-    "description": "Latest model with advanced features"
+    "name": "iPhone 2",
+    "price": 120,
+    "description": "Latest model"
   },
   {
     "id": "3",
     "name": "Apple",
-    "price": "1231",
-    "description": "2313"
+    "price": "121",
+    "description": "2312"
   }
 ]
