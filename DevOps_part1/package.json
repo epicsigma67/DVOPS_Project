@@ -1,0 +1,36 @@
+{
+<<<<<<< HEAD
+  "name": "part-1",
+  "version": "1.0.0",
+=======
+  "name": "resource-mgmt",
+  "version": "1.0.0",
+  "description": "DVOPS Project",
+>>>>>>> b362d63dc0f3f73b5b229c2f2f47f1244c5ad6ca
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+<<<<<<< HEAD
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "formidable": "^3.5.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.8.1"
+=======
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security"
+>>>>>>> b362d63dc0f3f73b5b229c2f2f47f1244c5ad6ca
+  }
+}
