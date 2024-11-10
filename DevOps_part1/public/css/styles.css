@@ -1,97 +1,111 @@
 body {
-    background-color: #06141B; /* Dark background */
-    color: #CCD0CF; /* Light text color */
+    background-color: #0D1117; /* Dark background for a modern look */
+    color: #C9D1D9; /* Light text color */
     font-family: 'Arial', sans-serif;
 }
 
-.container {
-    background-color: #11212D; /* Container background */
-    border-radius: 15px;
+#product-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    margin-bottom: 30px;
-}
-
-.table-striped-custom {
-    background-color: #253745; /* Table background */
-    color: #CCD0CF;
+    margin-bottom: 20px;
+    background-color: #161B22; /* Search section background */
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.table-striped-custom th {
-    background-color: #4A5C6A; /* Table header */
-    color: #CCD0CF;
-    text-align: center;
-}
-
-.table-striped-custom tr {
-    transition: background-color 0.3s ease;
-}
-
-.table-striped-custom tr:hover {
-    background-color: #4A5C6A; /* Hover effect */
-}
-
-.table-striped-custom td, .table-striped-custom th {
-    padding: 15px;
-    border-bottom: 1px solid #11212D;
-}
-
-.btn-primary, .btn-secondary {
-    border-radius: 20px;
-    padding: 8px 20px;
-    font-weight: bold;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary {
-    background-color: #9BA8AB; /* Primary button color */
-    color: #06141B;
-}
-
-.btn-primary:hover {
-    background-color: #4A5C6A;
-    color: #CCD0CF;
-    transform: scale(1.05);
-}
-
-.btn-secondary {
-    background-color: #CCD0CF; /* Secondary button color */
-    color: #06141B;
-}
-
-.btn-secondary:hover {
-    background-color: #9BA8AB;
-    color: #06141B;
-    transform: scale(1.05);
-}
-
-.modal-content {
-    background-color: #11212D; /* Modal background */
-    color: #CCD0CF;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .form-control {
-    background-color: #253745; /* Input background */
-    color: #CCD0CF;
-    border-radius: 10px;
-    border: 1px solid #4A5C6A;
+    width: 70%;
     padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #21262D; /* Input field background */
+    color: #C9D1D9;
 }
 
-.form-control::placeholder {
-    color: #9BA8AB; /* Placeholder color */
+#addProductBtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #238636; /* Add button color */
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addProductBtn:hover {
+    background-color: #2EA043;
+}
+
+.table-striped-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #21262D;
+}
+
+.table-striped-custom th,
+.table-striped-custom td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #30363D;
+}
+
+.table-striped-custom th {
+    background-color: #161B22;
+    color: #C9D1D9;
+}
+
+.table-striped-custom tr:hover {
+    background-color: #3A3F44;
+}
+
+.btn-secondary {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2D7DD2; /* Edit button color */
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #539BF5;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #161B22;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .close {
-    color: #CCD0CF;
+    color: #C9D1D9;
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
-#tableContent tr:nth-child(even) {
-    background-color: #11212D; /* Alternating row color */
+.close:hover {
+    color: #E06C75;
 }

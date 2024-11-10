@@ -4,182 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DVOPS - Resource Management Web App</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/resource.js"></script>
+    <title>Online Store</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-            background-color: #06141B; /* Dark background */
-            color: #CCD0CF; /* Light text color */
-        }
-
-        .container {
-            background-color: #11212D; /* Slightly lighter background */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .table-striped-custom {
-            background-color: #253745; /* Table background */
-            color: #CCD0CF;
-        }
-
-        .table-striped-custom th {
-            background-color: #4A5C6A; /* Table header */
-            color: #CCD0CF;
-        }
-
-        .table-striped-custom tr:nth-child(even) {
-            background-color: #11212D; /* Alternating row color */
-        }
-
-        .table-striped-custom tr:hover {
-            background-color: #4A5C6A; /* Hover effect */
-        }
-
-        .btn-primary {
-            background-color: #9BA8AB; /* Button color */
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #4A5C6A; /* Button hover effect */
-        }
-
-        .modal-content {
-            background-color: #11212D; /* Modal background */
-            color: #CCD0CF;
-        }
-
-        .form-control {
-            background-color: #253745; /* Input background */
-            color: #CCD0CF;
-            border: 1px solid #4A5C6A;
-        }
-
-        .form-control::placeholder {
-            color: #9BA8AB; /* Placeholder color */
-        }
-
-        .close {
-            color: #CCD0CF;
-        }
-    </style>
 </head>
 
-<body onload="viewResources()">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <img src="images/logo.png">
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#resourceModal">
-                    Add Resource
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <table class="table table-striped table-striped-custom">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Location</th>
-                        <th>Description</th>
-                        <th>Owner</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="tableContent">
-                </tbody>
-            </table>
-        </div>
-    </div>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Store Logo" id="logo" style="display: block; margin: 0 auto;">
+    </header>
 
-    <!-- Add Resource Modal -->
-    <div class="modal fade" id="resourceModal" tabindex="-1" role="dialog" aria-labelledby="resourceModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="resourceModalLabel">Add New Resource</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Resource Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter resource name">
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Location</label>
-                            <input type="text" class="form-control" id="location" placeholder="Enter resource location">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" placeholder="Enter short description">
-                        </div>
-                        <div class="form-group">
-                            <label for="owner">Owner</label>
-                            <input type="text" class="form-control" id="owner" placeholder="Enter resource owner">
-                        </div>
-                        <p align="right" id="message" class=""></p>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="addResource()">Add New Resource</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section id="product-search" class="container">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search resources..." oninput="searchProduct()">
+        <button id="addProductBtn" class="btn-primary" onclick="showAddProductForm()">Add Resource</button>
+    </section>
 
-   <!-- Update Resource Modal -->
-<div class="modal fade" id="updateResourceModal" tabindex="-1" role="dialog" aria-labelledby="editResourceModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <section id="product-list" class="container">
+        <table id="productTable" class="table-striped-custom">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be shown here -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editResourceModalLabel">Edit Resource</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="editName">Resource Name</label>
-                        <input type="text" class="form-control" id="editName" placeholder="Enter resource name">
-                    </div>
-                    <div class="form-group">
-                        <label for="editLocation">Location</label>
-                        <input type="text" class="form-control" id="editLocation" placeholder="Enter resource location">
-                    </div>
-                    <div class="form-group">
-                        <label for="editDescription">Description</label>
-                        <input type="text" class="form-control" id="editDescription" placeholder="Enter short description">
-                    </div>
-                    <div class="form-group">
-                        <label for="editOwner">Owner</label>
-                        <input type="text" class="form-control" id="editOwner" placeholder="Enter resource owner">
-                    </div>
-                    <p align="right" id="editMessage" class=""></p>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="updateButton" onclick="updateResource()">Update Resource</button>
-            </div>
+            <form id="addProductForm">
+                <input type="text" id="postName" class="form-control" placeholder="Product Name" required>
+                <input type="number" id="postPrice" class="form-control" placeholder="Product Price" required>
+                <textarea id="postDescription" class="form-control" placeholder="Product Description"></textarea>
+                <button type="submit" class="btn-primary">Add Product</button>
+            </form>
+            <div id="postResponse"></div>
         </div>
     </div>
-</div>
+    
+    <!-- Edit Product Modal -->
+    <div id="editProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="editProductForm">
+                <input type="text" id="editProductId" class="form-control" placeholder="Product ID" disabled>
+                <input type="text" id="editProductName" class="form-control" placeholder="Product Name">
+                <input type="number" id="editProductPrice" class="form-control" placeholder="Price">
+                <textarea id="editProductDescription" class="form-control" placeholder="Description"></textarea>
+                <button type="submit" class="btn-primary">Update Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/getById.js"></script>
+    <script src="js/postById.js"></script>
+    <script src="js/updateById.js"></script>
+
+    <script>
+        // Load products on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchProducts();
+        });
+
+        // Fetch all products
+        async function fetchProducts() {
+            try {
+                const response = await fetch('/api/products'); // Fetch all products directly
+                const products = await response.json(); // Expecting an array of products
+
+                const tableBody = document.querySelector("#productTable tbody");
+                tableBody.innerHTML = ''; // Clear existing rows
+
+                products.forEach(product => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${product._id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>${product.description}</td>
+                        <td><button class="btn-secondary" onclick="showEditProductForm('${product._id}', '${encodeURIComponent(product.name)}', '${product.price}', '${encodeURIComponent(product.description)}')">Edit</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+        
+        function showAddProductForm() {
+            document.getElementById("addProductModal").classList.add("show");
+        }
+
+        function closeAddProductForm() {
+            document.getElementById("addProductModal").classList.remove("show");
+        }
+
+        // Function to show and hide the edit product form
+        function showEditProductForm(id, name, price, description) {
+            document.getElementById("editProductId").value = id;
+            document.getElementById("editProductName").value = decodeURIComponent(name);
+            document.getElementById("editProductPrice").value = price;
+            document.getElementById("editProductDescription").value = decodeURIComponent(description);
+            document.getElementById("editProductModal").classList.add("show");
+        }
+
+        function closeEditProductForm() { 
+            document.getElementById("editProductModal").classList.remove("show");
+        }
+
+        // Search function
+        function searchProduct() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const rows = document.querySelectorAll("#productTable tbody tr");
+            rows.forEach(row => {
+                const productName = row.cells[1].textContent.toLowerCase();
+                row.style.display = productName.includes(query) ? "" : "none";
+            });
+        }
+
+        // Modal close button function
+        document.querySelectorAll('.close').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                modal.style.display = 'none';  // Hide the modal
+            });
+        });
+    </script>
+
+</body>
+
+</html>

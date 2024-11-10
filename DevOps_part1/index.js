@@ -1,39 +1,47 @@
+<<<<<<< HEAD
+// index.js
 const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 5050;
 const path = require('path');
+const postById = require('./Util/postUtil');
+const updateById = require('./Util/updateUtil');
+const getById = require('./Util/getUtil');
 
-const { addResource, viewResources, deleteResource } = require('./utils/ResourceUtil');
-const { updateResource } = require('./utils/updateResourceUtil');
-
-// Middleware to parse incoming request bodies (using built-in methods)
-app.use(express.urlencoded({ extended: true }));
+const app = express();
 app.use(express.json());
 
-// Serve static files from the "public" directory
+// Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route for the root path
+// API routes
+app.use('/api', postById);
+app.use('/api', updateById);
+app.use('/api', getById);
+app.use('/api/products', getById);
+
+// Default route to serve index.html for the root path
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'), (err) => {
-        if (err) {
-            console.error('Error sending file:', err);
-            res.status(err.status || 500).send('Internal Server Error');
-        }
-    });
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Define routes
-app.post('/add-resource', addResource);
-app.get('/view-resources', viewResources);
-app.put('/update-resource/:id', updateResource);
-app.delete('/delete-resource/:id', deleteResource);
-
-// Start the server
-const server = app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+=======
+var express = require('express');
+var bodyParser = require("body-parser");
+var app = express();
+const PORT = process.env.PORT || 5050
+var startPage = "index.html";
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static("./public"));
+app.get('/', (req, res) => {
+res.sendFile(__dirname + "/public/" + startPage);
+})
+server = app.listen(PORT, function () {
+const address = server.address();
+const baseUrl = `http://${address.address == "::" ? 'localhost' :
+address.address}:${address.port}`;
+console.log(`Demo project at: ${baseUrl}`);
 });
-
-
-// Export app and server for testing or further usage
-module.exports = { app, server };
+module.exports = {app, server}
+>>>>>>> b362d63dc0f3f73b5b229c2f2f47f1244c5ad6ca
