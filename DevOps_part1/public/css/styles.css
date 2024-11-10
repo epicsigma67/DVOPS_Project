@@ -1,3 +1,97 @@
-.table-striped-custom tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2; /* Alternate row color */
-    }
+body {
+    background-color: #06141B; /* Dark background */
+    color: #CCD0CF; /* Light text color */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: #11212D; /* Container background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+.table-striped-custom {
+    background-color: #253745; /* Table background */
+    color: #CCD0CF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.table-striped-custom th {
+    background-color: #4A5C6A; /* Table header */
+    color: #CCD0CF;
+    text-align: center;
+}
+
+.table-striped-custom tr {
+    transition: background-color 0.3s ease;
+}
+
+.table-striped-custom tr:hover {
+    background-color: #4A5C6A; /* Hover effect */
+}
+
+.table-striped-custom td, .table-striped-custom th {
+    padding: 15px;
+    border-bottom: 1px solid #11212D;
+}
+
+.btn-primary, .btn-secondary {
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #9BA8AB; /* Primary button color */
+    color: #06141B;
+}
+
+.btn-primary:hover {
+    background-color: #4A5C6A;
+    color: #CCD0CF;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #CCD0CF; /* Secondary button color */
+    color: #06141B;
+}
+
+.btn-secondary:hover {
+    background-color: #9BA8AB;
+    color: #06141B;
+    transform: scale(1.05);
+}
+
+.modal-content {
+    background-color: #11212D; /* Modal background */
+    color: #CCD0CF;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+    background-color: #253745; /* Input background */
+    color: #CCD0CF;
+    border-radius: 10px;
+    border: 1px solid #4A5C6A;
+    padding: 10px;
+}
+
+.form-control::placeholder {
+    color: #9BA8AB; /* Placeholder color */
+}
+
+.close {
+    color: #CCD0CF;
+}
+
+#tableContent tr:nth-child(even) {
+    background-color: #11212D; /* Alternating row color */
+}

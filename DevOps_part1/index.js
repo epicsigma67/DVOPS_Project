@@ -1,39 +1,39 @@
-var express = require('express');
-var bodyParser = require("body-parser");
-var app = express();
+const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 5050;
-var startPage = "index.html";
+const path = require('path');
 
-// Middleware to parse incoming request bodies
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+const { addResource, viewResources, deleteResource } = require('./utils/ResourceUtil');
+const { updateResource } = require('./utils/updateResourceUtil');
+
+// Middleware to parse incoming request bodies (using built-in methods)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Serve static files from the "public" directory
-app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Route for the root path
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/public/" + startPage, (err) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'), (err) => {
         if (err) {
-            res.status(err.status).end();
+            console.error('Error sending file:', err);
+            res.status(err.status || 500).send('Internal Server Error');
         }
     });
 });
-// View Resources
-const { addResource, viewResources, editResource, deleteResource } = require('./utils/ResourceUtil');
 
 // Define routes
 app.post('/add-resource', addResource);
 app.get('/view-resources', viewResources);
-app.put('/edit-resource/:id', editResource);
+app.put('/update-resource/:id', updateResource);
 app.delete('/delete-resource/:id', deleteResource);
 
 // Start the server
-const server = app.listen(PORT, function () {
-    const address = server.address();
-    const baseUrl = `http://${address.address === "::" ? 'localhost' : address.address}:${address.port}`;
-    console.log(`Demo project at: ${baseUrl}`);
+const server = app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
 // Export app and server for testing or further usage
 module.exports = { app, server };

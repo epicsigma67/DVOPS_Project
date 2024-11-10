@@ -51,37 +51,7 @@ async function viewResources(req, res) {
     }
 }
 
-// Edit Resource
-async function editResource(req, res) {
-    try {
-        const id = req.params.id;
-        const name = req.body.name;
-        const location = req.body.location;
-        const description = req.body.description;
 
-        const allResources = await readJSON('utils/resources.json');
-        let modified = false;
-
-        for (let i = 0; i < allResources.length; i++) {
-            if (allResources[i].id === id) {
-                allResources[i].name = name;
-                allResources[i].location = location;
-                allResources[i].description = description;
-                modified = true;
-                break;
-            }
-        }
-
-        if (modified) {
-            await fs.writeFile('utils/resources.json', JSON.stringify(allResources), 'utf8');
-            return res.status(201).json({ message: 'Resource modified successfully!' });
-        } else {
-            return res.status(500).json({ message: 'Error occurred, unable to modify!' });
-        }
-    } catch (error) {
-        return res.status(500).json({ message: error.message });
-    }
-}
 
 // Delete Resource
 async function deleteResource(req, res) {
@@ -104,5 +74,5 @@ async function deleteResource(req, res) {
 }
 
 module.exports = {
-    readJSON, writeJSON, addResource, viewResources, editResource, deleteResource
+    readJSON, writeJSON, addResource, viewResources, deleteResource
 };
