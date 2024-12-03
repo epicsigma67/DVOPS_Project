@@ -30,7 +30,7 @@ router.get('/get/:id', (req, res) => {
 router.get('/products', (req, res) => {
     try {
         const data = readData(); // Reads all products from data.json
-        res.json(data); 
+        res.json(data); // Return all products as an array
     } catch (error) {
         res.status(500).send({ error: "Error retrieving products" });
     }

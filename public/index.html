@@ -10,16 +10,16 @@
 
 <body>
     <header>
-        <img src="images/logo.png" alt="Store Logo" id="logo" style="display: block; margin: 0 auto;">
+        <img src="images/logo.png" alt="Store Logo" id="logo">
     </header>
 
-    <section id="product-search" class="container">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search resources..." oninput="searchProduct()">
-        <button id="addProductBtn" class="btn-primary" onclick="showAddProductForm()">Add Resource</button>
+    <section id="product-search">
+        <input type="text" id="searchInput" placeholder="Search product by name" oninput="searchProduct()">
     </section>
 
-    <section id="product-list" class="container">
-        <table id="productTable" class="table-striped-custom">
+    <section id="product-list">
+        <button id="addProductBtn" onclick="showAddProductForm()">Add Product</button>
+        <table id="productTable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Product rows will be shown here -->
+                <!-- Product rows will be populated here -->
             </tbody>
         </table>
     </section>
@@ -38,13 +38,13 @@
     <!-- Add Product Modal -->
     <div id="addProductModal" class="modal">
         <div class="modal-content">
+            <span class="close">&times;</span>
             <form id="addProductForm">
-                <input type="text" id="postName" class="form-control" placeholder="Product Name" required>
-                <input type="number" id="postPrice" class="form-control" placeholder="Product Price" required>
-                <textarea id="postDescription" class="form-control" placeholder="Product Description"></textarea>
-                <button type="submit" class="btn-primary">Add Product</button>
+                <input type="text" id="postName" placeholder="Product Name">
+                <input type="number" id="postPrice" placeholder="Price">
+                <textarea id="postDescription" placeholder="Description"></textarea>
+                <button type="submit">Add Product</button>
             </form>
-            <div id="postResponse"></div>
         </div>
     </div>
     
@@ -53,14 +53,15 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <form id="editProductForm">
-                <input type="text" id="editProductId" class="form-control" placeholder="Product ID" disabled>
-                <input type="text" id="editProductName" class="form-control" placeholder="Product Name">
-                <input type="number" id="editProductPrice" class="form-control" placeholder="Price">
-                <textarea id="editProductDescription" class="form-control" placeholder="Description"></textarea>
-                <button type="submit" class="btn-primary">Update Product</button>
+                <input type="text" id="editProductId" placeholder="Product ID" disabled>
+                <input type="text" id="editProductName" placeholder="Product Name">
+                <input type="number" id="editProductPrice" placeholder="Price">
+                <textarea id="editProductDescription" placeholder="Description"></textarea>
+                <button type="submit">Update Product</button>
             </form>
         </div>
     </div>
+
 
     <script src="js/getById.js"></script>
     <script src="js/postById.js"></script>
@@ -84,12 +85,12 @@
                 products.forEach(product => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
-                        <td>${product._id}</td>
-                        <td>${product.name}</td>
-                        <td>${product.price}</td>
-                        <td>${product.description}</td>
-                        <td><button class="btn-secondary" onclick="showEditProductForm('${product._id}', '${encodeURIComponent(product.name)}', '${product.price}', '${encodeURIComponent(product.description)}')">Edit</button></td>
-                    `;
+                <td>${product._id}</td>
+                <td>${product.name}</td>
+                <td>${product.price}</td>
+                <td>${product.description}</td>
+                <td><button onclick="showEditProductForm('${product._id}', '${encodeURIComponent(product.name)}', '${product.price}', '${encodeURIComponent(product.description)}')">Edit</button></td>
+            `;
                     tableBody.appendChild(row);
                 });
             } catch (error) {
@@ -97,8 +98,8 @@
             }
         }
 
-        
-        function showAddProductForm() {
+        // Function to show and hide the add product form
+                function showAddProductForm() {
             document.getElementById("addProductModal").classList.add("show");
         }
 
@@ -106,7 +107,7 @@
             document.getElementById("addProductModal").classList.remove("show");
         }
 
-        // Function to show and hide the edit product form
+        // Function to show and hide the Edit Product form
         function showEditProductForm(id, name, price, description) {
             document.getElementById("editProductId").value = id;
             document.getElementById("editProductName").value = decodeURIComponent(name);
@@ -118,8 +119,7 @@
         function closeEditProductForm() { 
             document.getElementById("editProductModal").classList.remove("show");
         }
-
-        // Search function
+        // Search functionality
         function searchProduct() {
             const query = document.getElementById("searchInput").value.toLowerCase();
             const rows = document.querySelectorAll("#productTable tbody tr");
@@ -128,14 +128,6 @@
                 row.style.display = productName.includes(query) ? "" : "none";
             });
         }
-
-        // Modal close button function
-        document.querySelectorAll('.close').forEach(button => {
-            button.addEventListener('click', function() {
-                const modal = this.closest('.modal');
-                modal.style.display = 'none';  // Hide the modal
-            });
-        });
     </script>
 
 </body>

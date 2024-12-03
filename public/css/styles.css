@@ -1,111 +1,193 @@
+/* General Body Styling */
 body {
-    background-color: #0D1117; /* Dark background for a modern look */
-    color: #C9D1D9; /* Light text color */
-    font-family: 'Arial', sans-serif;
-}
-
-#product-search {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #161B22; /* Search section background */
-    border-radius: 10px;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.form-control {
-    width: 70%;
+/* Header Styling */
+header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#logo {
+    width: 150px;
+    margin: 0 auto;
+}
+
+/* Product Search Bar */
+#product-search {
+    margin: 20px 0;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+#searchInput {
+    width: 100%;
     padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: none;
-    background-color: #21262D; /* Input field background */
-    color: #C9D1D9;
+    box-sizing: border-box;
 }
 
+/* Product Table */
+#product-list {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Add Product Button */
 #addProductBtn {
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 16px;
     border: none;
-    background-color: #238636; /* Add button color */
-    color: #FFFFFF;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    z-index: 1000
 }
 
 #addProductBtn:hover {
-    background-color: #2EA043;
+    background-color: #45a049;
 }
 
-.table-striped-custom {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #21262D;
-}
-
-.table-striped-custom th,
-.table-striped-custom td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #30363D;
-}
-
-.table-striped-custom th {
-    background-color: #161B22;
-    color: #C9D1D9;
-}
-
-.table-striped-custom tr:hover {
-    background-color: #3A3F44;
-}
-
-.btn-secondary {
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: #2D7DD2; /* Edit button color */
-    color: #FFFFFF;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background-color: #539BF5;
-}
-
+/* Modal Styling */
 .modal {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     justify-content: center;
     align-items: center;
+    z-index: 9999; /* Ensure the modal is above other elements */
+    opacity: 0;  /* Make it invisible by default */
+    transition: opacity 0.3s ease;  /* Smooth transition */
 }
 
 .modal.show {
     display: flex;
+    opacity: 1; /* Make the modal visible */
 }
 
 .modal-content {
-    background-color: #161B22;
+    background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
 }
 
 .close {
-    color: #C9D1D9;
-    float: right;
-    font-size: 1.5em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
     cursor: pointer;
 }
 
-.close:hover {
-    color: #E06C75;
+/* Form Inputs */
+input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+/* Success and Error Messages */
+#successMessage, #errorMessage {
+    width: 80%;
+    max-width: 400px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#successMessage {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#errorMessage {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#successMessage.show, #errorMessage.show {
+    opacity: 1;
+}
+
+/* Button Styling for Modals */
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
