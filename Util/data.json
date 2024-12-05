@@ -1,71 +1,14 @@
 [
   {
     "_id": "1",
-    "name": "b",
-    "price": "2",
-    "description": "b"
+    "name": "Laptop",
+    "price": 999,
+    "description": "High-performance laptop"
   },
   {
     "_id": "2",
-    "name": "b",
-    "price": "2",
-    "description": "b"
-  },
-  {
-    "_id": "3",
-    "name": "b",
-    "price": "4",
-    "description": "b"
-  },
-  {
-    "_id": "4",
-    "name": "b",
-    "price": "5",
-    "description": "b"
-  },
-  {
-    "_id": "5"
-  },
-  {
-    "_id": "a"
-  },
-  {
-    "_id": "6"
-  },
-  {
-    "_id": "7",
-    "name": "a",
-    "price": "1",
-    "description": "a"
-  },
-  {
-    "_id": "8",
-    "name": "a",
-    "price": "1",
-    "description": "a"
-  },
-  {
-    "_id": "9",
-    "name": "b",
-    "price": "2",
-    "description": "b"
-  },
-  {
-    "_id": "10",
-    "name": "a",
-    "price": "1",
-    "description": "a"
-  },
-  {
-    "_id": "11",
-    "name": "b",
-    "price": "2",
-    "description": "b"
-  },
-  {
-    "_id": "12",
-    "name": "aasd",
-    "price": "12",
-    "description": "asd"
+    "name": "Laptop",
+    "price": 999,
+    "description": "High-performance laptop"
   }
 ]

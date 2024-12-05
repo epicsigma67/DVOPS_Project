@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const path = require('path');
 const postById = require('./Util/postUtil');
@@ -22,5 +21,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export app for testing
+module.exports = app;
+
+// Start server only if this file is directly run (not during testing)
+if (require.main === module) {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
