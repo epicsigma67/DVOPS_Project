@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\dvops_project\\public\\js\\getById.js": {
-    "path": "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\dvops_project\\public\\js\\getById.js",
+  "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\DVOPS_Project\\public\\js\\getById.js": {
+    "path": "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\DVOPS_Project\\public\\js\\getById.js",
     "statementMap": {
       "0": {
         "start": {
@@ -81,10 +81,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7f23393c762395e86b2452cf4e76019482fceb8d"
+    "hash": "dd3d18442726cfa4ec60d53bcd4fc17a2d2bc07c"
   },
-  "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\dvops_project\\public\\js\\postById.js": {
-    "path": "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\dvops_project\\public\\js\\postById.js",
+  "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\DVOPS_Project\\public\\js\\postById.js": {
+    "path": "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\DVOPS_Project\\public\\js\\postById.js",
     "statementMap": {
       "0": {
         "start": {
@@ -414,10 +414,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7aeddb374af3c12e19b2d399ba082e27663c518e"
+    "hash": "cd4bd1f58c948927fe5a58aa14639dc6101fc1b4"
   },
-  "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\dvops_project\\public\\js\\updateById.js": {
-    "path": "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\dvops_project\\public\\js\\updateById.js",
+  "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\DVOPS_Project\\public\\js\\updateById.js": {
+    "path": "C:\\Users\\dalto\\Documents\\DVOPS_Projects\\Lab1Ex1\\DVOPS_Project\\public\\js\\updateById.js",
     "statementMap": {
       "0": {
         "start": {
@@ -867,6 +867,6 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "97f14a600dcc6e11de65340b89e51eff720d147a"
+    "hash": "06b4cbbcf5c828f074dd65060e2094405421ee1f"
   }
 }

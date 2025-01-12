@@ -208,5 +208,119 @@
     "name": "Another Product",
     "price": "49.99",
     "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "36",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "37",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "38",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "39",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "40",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "41",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "42",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "43",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "44",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "45",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "46",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "47",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "48",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "49",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "50",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "51",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "52",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "53",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "54",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
   }
 ]

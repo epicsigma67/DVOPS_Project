@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733478213237" clover="3.2.0">
-  <project timestamp="1733478213237" name="All files">
+<coverage generated="1736708655077" clover="3.2.0">
+  <project timestamp="1736708655077" name="All files">
     <metrics statements="41" coveredstatements="16" conditionals="6" coveredconditionals="2" methods="10" coveredmethods="3" elements="57" coveredelements="21" complexity="0" loc="41" ncloc="41" packages="1" files="3" classes="3"/>
-    <file name="getById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\dvops_project\public\js\getById.js">
+    <file name="getById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\DVOPS_Project\public\js\getById.js">
       <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="2" count="0" type="stmt"/>
       <line num="3" count="0" type="stmt"/>
       <line num="4" count="0" type="stmt"/>
       <line num="6" count="0" type="stmt"/>
     </file>
-    <file name="postById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\dvops_project\public\js\postById.js">
+    <file name="postById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\DVOPS_Project\public\js\postById.js">
       <metrics statements="16" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
       <line num="2" count="3" type="stmt"/>
       <line num="3" count="3" type="stmt"/>
@@ -28,7 +28,7 @@
       <line num="38" count="3" type="stmt"/>
       <line num="40" count="0" type="stmt"/>
     </file>
-    <file name="updateById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\dvops_project\public\js\updateById.js">
+    <file name="updateById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\DVOPS_Project\public\js\updateById.js">
       <metrics statements="21" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <line num="2" count="0" type="stmt"/>
       <line num="3" count="0" type="stmt"/>
