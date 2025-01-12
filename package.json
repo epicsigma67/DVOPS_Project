@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "backend-test": "jest --coverage",
     "frontend-instrument": "xcopy public instrumented /I /E /Y & nyc instrument public instrumented",
     "frontend-test": "rimraf .nyc_output && nyc --nycrc-path .nycrc-frontend cypress run"
   },
