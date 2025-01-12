@@ -1,14 +1,212 @@
 [
   {
     "_id": "1",
-    "name": "Laptop",
-    "price": 999,
-    "description": "High-performance laptop"
+    "name": "asd",
+    "price": "123",
+    "description": "sdf"
   },
   {
     "_id": "2",
-    "name": "Laptop",
-    "price": 999,
-    "description": "High-performance laptop"
+    "name": "afsade",
+    "price": "123",
+    "description": "12412aasd"
+  },
+  {
+    "_id": "3",
+    "name": "a",
+    "price": "1",
+    "description": "a"
+  },
+  {
+    "_id": "4",
+    "name": "a",
+    "price": "1",
+    "description": "a"
+  },
+  {
+    "_id": "5",
+    "name": "a",
+    "price": "1",
+    "description": "a"
+  },
+  {
+    "_id": "6",
+    "name": "a",
+    "price": "1",
+    "description": "aasd"
+  },
+  {
+    "_id": "7",
+    "name": "a",
+    "price": "1",
+    "description": "asd"
+  },
+  {
+    "_id": "8",
+    "name": "a",
+    "price": "1",
+    "description": "a"
+  },
+  {
+    "_id": "9",
+    "name": "a",
+    "price": "1",
+    "description": "a"
+  },
+  {
+    "_id": "10",
+    "name": "sdfsd",
+    "price": "1234123",
+    "description": "a"
+  },
+  {
+    "_id": "11",
+    "name": "asd123",
+    "price": "123123",
+    "description": "asd"
+  },
+  {
+    "_id": "12",
+    "name": "gsdgsdfg",
+    "price": "123123",
+    "description": "asdasdg"
+  },
+  {
+    "_id": "13",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "14",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "15",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "16",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "17",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "18",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "19",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "20",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "21",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "22",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "23",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "24",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "25",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "26",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "27",
+    "name": "fdfgdfg",
+    "price": "1234123",
+    "description": "dsafsdg"
+  },
+  {
+    "_id": "28",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "29",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "30",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "31",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "32",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "33",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
+  },
+  {
+    "_id": "34",
+    "name": "New Product",
+    "price": "99.99",
+    "description": "This is a new product."
+  },
+  {
+    "_id": "35",
+    "name": "Another Product",
+    "price": "49.99",
+    "description": "This product should close the modal after addition."
   }
 ]

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" alt="Store Logo" id="logo" style="display: block; margin: 0 auto;">
+    </header>
+
+    <section id="product-search" class="container">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search resources..." oninput="searchProduct()">
+        <button id="addProductBtn" class="btn-primary" onclick="showAddProductForm()">Add Resource</button>
+    </section>
+
+    <section id="product-list" class="container">
+        <table id="productTable" class="table-striped-custom">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <form id="addProductForm">
+                <input type="text" id="postName" class="form-control" placeholder="Product Name" required>
+                <input type="text" id="postPrice" class="form-control" placeholder="Product Price" required>
+                <textarea id="postDescription" class="form-control" placeholder="Product Description"></textarea>
+                <button type="submit" class="btn-primary">Add Product</button>
+            </form>
+            <div id="postResponse"></div>
+        </div>
+    </div>
+    
+    <!-- Edit Product Modal -->
+    <div id="editProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="editProductForm">
+                <input type="text" id="editProductId" class="form-control" placeholder="Product ID" disabled>
+                <input type="text" id="editProductName" class="form-control" placeholder="Product Name">
+                <input type="text" id="editProductPrice" class="form-control" placeholder="Price">
+                <textarea id="editProductDescription" class="form-control" placeholder="Description"></textarea>
+                <button type="submit" class="btn-primary">Update Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/getById.js"></script>
+    <script src="js/postById.js"></script>
+    <script src="js/updateById.js"></script>
+
+    <script>
+        // Load products on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchProducts();
+        });
+
+        // Fetch all products
+        async function fetchProducts() {
+            try {
+                const response = await fetch('/api/products'); // Fetch all products directly
+                const products = await response.json(); // Expecting an array of products
+
+                const tableBody = document.querySelector("#productTable tbody");
+                tableBody.innerHTML = ''; // Clear existing rows
+
+                products.forEach(product => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${product._id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>${product.description}</td>
+                        <td><button class="btn-secondary" onclick="showEditProductForm('${product._id}', '${encodeURIComponent(product.name)}', '${product.price}', '${encodeURIComponent(product.description)}')">Edit</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+        // Function to show and hide the add product form
+        function showAddProductForm() {
+            document.getElementById("addProductModal").classList.add("show");
+        }
+
+        function closeAddProductForm() {
+            document.getElementById("addProductModal").classList.remove("show");
+        }
+
+        // Function to show and hide the edit product form
+        function showEditProductForm(id, name, price, description) {
+            document.getElementById("editProductId").value = id;
+            document.getElementById("editProductName").value = decodeURIComponent(name);
+            document.getElementById("editProductPrice").value = price;
+            document.getElementById("editProductDescription").value = decodeURIComponent(description);
+            document.getElementById("editProductModal").classList.add("show");
+        }
+
+        function closeEditProductForm() { 
+            document.getElementById("editProductModal").classList.remove("show");
+        }
+
+        // Search functionality
+        function searchProduct() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const rows = document.querySelectorAll("#productTable tbody tr");
+            rows.forEach(row => {
+                const productName = row.cells[1].textContent.toLowerCase();
+                row.style.display = productName.includes(query) ? "" : "none";
+            });
+        }
+
+        // Modal close button functionality
+        document.querySelectorAll('.close').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                modal.style.display = 'none';  // Hide the modal
+            });
+        });
+    </script>
+
+</body>
+
+</html>

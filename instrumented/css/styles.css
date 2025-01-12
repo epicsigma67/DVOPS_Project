@@ -1,0 +1,111 @@
+body {
+    background-color: #0D1117; /* Dark background for a modern look */
+    color: #C9D1D9; /* Light text color */
+    font-family: 'Arial', sans-serif;
+}
+
+#product-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #161B22; /* Search section background */
+    border-radius: 10px;
+}
+
+.form-control {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #21262D; /* Input field background */
+    color: #C9D1D9;
+}
+
+#addProductBtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #238636; /* Add button color */
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addProductBtn:hover {
+    background-color: #2EA043;
+}
+
+.table-striped-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #21262D;
+}
+
+.table-striped-custom th,
+.table-striped-custom td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #30363D;
+}
+
+.table-striped-custom th {
+    background-color: #161B22;
+    color: #C9D1D9;
+}
+
+.table-striped-custom tr:hover {
+    background-color: #3A3F44;
+}
+
+.btn-secondary {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2D7DD2; /* Edit button color */
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #539BF5;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #161B22;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: #C9D1D9;
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #E06C75;
+}

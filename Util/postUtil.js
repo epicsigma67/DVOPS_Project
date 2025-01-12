@@ -32,12 +32,12 @@ router.post('/post', (req, res) => {
 
     // Check if price is a valid number
     if (isNaN(price)) {
-        return res.status(400).send({ error: 'Price must be a number' });
+        return res.status(400).send({ error: 'Price must be a valid number' });
     }
 
     // Validate that name and description are present
     if (!name || !description) {
-        return res.status(400).send({ error: 'Name and description are required' });
+        return res.status(400).send({ error: 'Both name and description are required' });
     }
 
     const data = readData();
@@ -55,7 +55,7 @@ router.post('/post', (req, res) => {
         res.status(201).send({ message: 'Item posted successfully', item: newItem });
     } catch (error) {
         console.error('Error during post operation:', error);
-        res.status(500).send({ error: 'Error posting item' });
+        res.status(500).send({ error: 'Internal Server Error: Unable to post item' });
     }
 });
 
