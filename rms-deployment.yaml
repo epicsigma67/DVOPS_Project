@@ -14,6 +14,6 @@ spec: # defines the desired state of the Deployment.
     spec: # specifies the container(s) to run
       containers:
       - name: rms-container
-        image: epicsigma67/rms-docker-img:v2
+        image: epicsigma67/rms-docker-img:latest
         ports:
         - containerPort: 3000 # specifies the port that the application listens on
