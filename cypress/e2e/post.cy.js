@@ -9,20 +9,11 @@ describe('Add Product Functionality', () => {
   });
 
   after(() => {
-    cy.window().then((win) => {
-      // Ensure the coverage data is collected before shutting down the server
-      cy.request('/coverage').then((response) => {
-        // Log coverage data if needed or handle it here
-        console.log('Coverage:', response.body);
-      });
-    });
-
-    // Stop the server after coverage is collected
     return cy.task('stopServer');
   });
 
   beforeEach(() => {
-    cy.visit(baseUrl);  // Ensure the page is loaded before each test
+    cy.visit(baseUrl); // Ensure the page is loaded before each test
   });
 
   it('should show the Add Product button', () => {
@@ -36,8 +27,8 @@ describe('Add Product Functionality', () => {
 
   it('should show an error message for empty product name', () => {
     cy.get('button[id="addProductBtn"]').click();
-    cy.get('#postName').clear();  // Clear the name input
-    cy.get('#postPrice').type('10');  // Provide valid price
+    cy.get('#postName').clear(); // Clear the name input
+    cy.get('#postPrice').type('10'); // Provide valid price
     cy.get('#postDescription').type('A valid description');
     cy.get('button[type="submit"]').contains('Add Product').click();
 

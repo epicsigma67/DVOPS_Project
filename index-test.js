@@ -16,7 +16,8 @@ app.use('/api', updateById);
 app.use('/api', getById);
 app.use('/api/products', getById);
 
-// Serve the coverage endpoint
+// Serve the coverage endpoint for both /coverage and /__coverage__
+app.use('/coverage', express.static('.nyc_output'));
 app.use('/__coverage__', express.static('.nyc_output'));
 
 // Default route to serve index.html for the root path
@@ -37,4 +38,3 @@ if (require.main === module) {
         console.log(`Demo project at: ${baseUrl}`);
     });
 }
-    
