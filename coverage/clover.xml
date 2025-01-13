@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736711381547" clover="3.2.0">
-  <project timestamp="1736711381547" name="All files">
+<coverage generated="1736737090010" clover="3.2.0">
+  <project timestamp="1736737090010" name="All files">
     <metrics statements="41" coveredstatements="16" conditionals="6" coveredconditionals="2" methods="10" coveredmethods="3" elements="57" coveredelements="21" complexity="0" loc="41" ncloc="41" packages="1" files="3" classes="3"/>
     <file name="getById.js" path="C:\Users\dalto\Documents\DVOPS_Projects\Lab1Ex1\DVOPS_Project\public\js\getById.js">
       <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
